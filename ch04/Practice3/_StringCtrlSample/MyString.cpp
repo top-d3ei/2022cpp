@@ -40,7 +40,9 @@ void CMyString::Release() {
 
 CMyString& CMyString::operator=(const CMyString &rhs) {
     cout << "_operator=(const CMyString &) " << rhs.GetString() << endl;
-    this->SetString(rhs.GetString());
+    if (this != &rhs)   // 체크: 자기 자신에 대한 대입인가?
+        this->SetString(rhs.GetString());
+    
     return *this;
 }
 
