@@ -13,7 +13,9 @@ public:
     int SetString(const char* pszParam);
     const char* GetString() const;
     void Release();
+    //대입 연산자 오버라이딩
     CMyString& operator=(const CMyString &);
+    //허용되는 변환
     operator char*(void) const;
 
 };
